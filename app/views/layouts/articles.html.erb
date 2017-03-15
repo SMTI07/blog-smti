@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title)%> | Dasboard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+
+   <div id="wrapper" data-spy="scroll" data-target="#spy" class="">
+    <!-- Sidebar -->
+   
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="">
+      <%= render('partial/sidebar') %>
+        <div class="page-content inset">
+         <%= yield %>
+        </div>
+    </div>
+            
+ 
+  </body>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+        
+                
+  /*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#spy', offset:80});
+
+    /*Smooth link animation*/
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+        
+        });
+  </script>
+</html>
+
+
+
