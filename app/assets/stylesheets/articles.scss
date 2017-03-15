@@ -1,3 +1,48 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section {
+
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.article {
+  &:hover {
+    background-color: RGB(23, 147, 205);
+    color: white;
+    a {
+      color: white;
+    }
+    a:hover {
+      text-decoration: none;
+      overflow-wrap: break-word;
+    }
+  }
+  div {
+    padding: 5px 5px 5px 5px;
+    overflow-wrap: break-word;
+  }
+}
+
+.content {
+  a:hover {
+    text-decoration: none;
+    overflow-wrap: break-word;
+  }
+}
+
+div {
+  overflow-wrap: break-word;
+}
