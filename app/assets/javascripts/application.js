@@ -17,6 +17,8 @@
 //= require react
 //= require react_ujs
 //= require cocoon
+//= require jasny-bootstrap.min
 //= require bootstrap-datepicker
+//= require dropzone
 //= require components
 //= require_tree .
