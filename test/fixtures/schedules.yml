@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2017-03-15
+  archive: MyString
+  description: MyText
+  approve: false
+  subject: one
+
+two:
+  title: MyString
+  date: 2017-03-15
+  archive: MyString
+  description: MyText
+  approve: false
+  subject: two
