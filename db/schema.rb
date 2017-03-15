@@ -10,36 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170315152703) do
-=======
-ActiveRecord::Schema.define(version: 20170315042315) do
->>>>>>> 0833980726c2601113bb97a63448c651a268f264
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "schedules", force: :cascade do |t|
-    t.string   "title"
-    t.date     "date"
-    t.string   "archive"
-    t.text     "description"
-    t.boolean  "approve"
-    t.integer  "subject_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["subject_id"], name: "index_schedules_on_subject_id", using: :btree
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "schedules", "subjects"
-=======
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -61,5 +36,23 @@ ActiveRecord::Schema.define(version: 20170315042315) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
->>>>>>> 0833980726c2601113bb97a63448c651a268f264
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title"
+    t.date     "date"
+    t.string   "archive"
+    t.text     "description"
+    t.boolean  "approve"
+    t.integer  "subject_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["subject_id"], name: "index_schedules_on_subject_id", using: :btree
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "schedules", "subjects"
 end
