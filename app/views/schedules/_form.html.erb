@@ -1,16 +1,55 @@
-<%= simple_form_for(@schedule) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :date %>
-    <%= f.input :archive %>
-    <%= f.input :description %>
-    <%= f.input :approve %>
-    <%= f.association :subject %>
+<%= simple_form_for(@schedule ) do |f| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= render 'form/error', form: @schedule %>
+      <div class="panel panel-default panel-custom">
+        <div class="panel-heading">
+          <ul class="list-inline" style="margin: 0px;">
+            <li>
+              <h4><%= action_name.capitalize %> Schedule</h4>
+            </li>
+            <li class="pull-right">
+              <%= link_to 'Back', schedules_path, class: 'btn btn-default btn-custom' %>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.input :title, label: false, placeholder: 'Judul' %>
+            </div>
+            <div class="col-sm-4">
+              <% if action_name == 'new' %>
+                <%= f.association :subject, label: false, prompt: 'Mata Kuliah' %>
+              <% else %>
+                <%= f.association :subject,label: false %>
+              <% end %>
+            </div>
+            <div class="col-sm-12">
+              <ul class="list-inline">
+                <li>
+                  <span class="form-header">Tanggal</span>
+                </li>
+                <li>
+                  <%= f.input :date, label: false %>
+                </li>
+              </ul>
+            </div>
+            <%= render('form/input', form: f, data: @schedule.archive|| image_url('default.png'), width: 12, caption: 'Arsip', name: :archive, type: 'image'); %>
+            <div class="col-xs-12">
+              <%= f.input :description, label: false, placeholder: 'Deskripsi' %>
+            </div>
+            <div class="col-xs-12">
+              <%= f.input :approve %>
+            </div>
+          </div>
+          <div class="text-right">
+            <%= f.button :submit, class: 'btn btn-default btn-custom' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
 <% end %>

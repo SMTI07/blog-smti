@@ -1,27 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <% if notice %>
+        <div class="alert alert-info" role="alert" id="notice"><%= notice %></div>
+      <% end %>
+      <div class="panel panel-default panel-custom">
+        <div class="panel-heading">
+          <ul class="list-inline" style="margin: 0px;">
+            <li>
+              <h4>Subjects</h4>
+            </li>
+            <li class="pull-right">
+              <%= link_to 'New Subject', new_subject_path, class: 'btn btn-default btn-custom' %>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-<h1>Subjects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <tr>
-        <td><%= subject.name %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Subject', new_subject_path %>
+              <tbody>
+                <% @subjects.each do |subject| %>
+                  <tr>
+                    <td><%= subject.name %></td>
+                    <td><%= link_to 'Show', subject %></td>
+                    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+                    <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

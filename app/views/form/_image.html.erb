@@ -1,0 +1,11 @@
+<div class="col-sm-<%= width %> col-md-<%= width %> col-lg-<%= width %>">
+  <span class="form-image-caption form-header"><%= caption %></span>
+  <div class="fileinput fileinput-new" data-provides="fileinput">
+    <span class="btn btn-default btn-file btn-upload"><span class="fileinput-new"><%= data.model[:archive] %></span><span class="fileinput-exists">
+    </span>
+    <%= (form.input_field name, label:false, value: data.url) if !data.url.include? 'default' %>
+    <%= (form.input_field name, label:false) if data.url.include? 'default' %>
+    <span class="fileinput-filename"></span>
+    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none;">&times;</a>
+  </div>
+</div>
