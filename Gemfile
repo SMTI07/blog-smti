@@ -42,6 +42,8 @@ gem 'fog'
 gem 'jbuilder', '~> 2.5'
 
 gem 'friendly_id'
+
+gem 'ckeditor'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

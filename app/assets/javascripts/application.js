@@ -19,4 +19,5 @@
 //= require cocoon
 //= require bootstrap-datepicker
 //= require components
+//= require ckeditor/init
 //= require_tree .
