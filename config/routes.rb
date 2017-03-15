@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :albums do
-    resources :photos
+    resources :photos, only: [:create, :destroy, :new]#, :update, :new, :edit]
   end
   resources :articles
   root 'articles#index'
