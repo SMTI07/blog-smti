@@ -14,7 +14,8 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = Photo.new
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.build
   end
 
   # GET /photos/1/edit
@@ -24,12 +25,13 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(photo_params)
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.build(photo_params)
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
+        format.html { redirect_to @album, notice: 'Photo was successfully created.' }
+        format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
@@ -42,8 +44,8 @@ class PhotosController < ApplicationController
   def update
     respond_to do |format|
       if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
-        format.json { render :show, status: :ok, location: @photo }
+        format.html { redirect_to @album, notice: 'Photo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
@@ -64,6 +66,7 @@ class PhotosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
+      @album = Album.find(params[:album_id])
       @photo = Photo.find(params[:id])
     end
 

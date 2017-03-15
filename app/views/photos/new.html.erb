@@ -3,9 +3,9 @@
     <h3 class="panel-title">New Photo</h3>
   </div>
   <div class="panel-body">
-    <%= render 'form', album: @photo %>
+    <%= render 'form', album: @album, photo: @photo %>
   </div>
   <div class="panel-footer">
-    <%= link_to 'Back', photos_path %>
+    <%= link_to 'Back', @album %>
   </div>
 </div>

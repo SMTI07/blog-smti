@@ -1,7 +1,9 @@
-<% @album.each do |album| %>
+<h2 class="text-center">ALbums</h2>
+<%= link_to 'buat album baru', new_album_path, class: 'btn btn-default'%>
+<% @albums.each do |album| %>
   <%= link_to album do %>
     <div class='col-md-4'>
-      <%= image_tag(post.picture_url(:thumb), class: "img-responsive center-block") %>
+      <%= image_tag(album.cover_url(:thumb), class: "img-responsive center-block") if album.cover? %>
     </div>
-  <% end %>
+    <% end %>
 <% end %>
