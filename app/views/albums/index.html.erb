@@ -1,0 +1,7 @@
+<% @album.each do |album| %>
+  <%= link_to album do %>
+    <div class='col-md-4'>
+      <%= image_tag(post.picture_url(:thumb), class: "img-responsive center-block") %>
+    </div>
+  <% end %>
+<% end %>

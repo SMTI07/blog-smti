@@ -40,6 +40,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'carrierwave'
 gem 'carrierwave-base64'
+gem 'mini_magick', '~> 4.3.5'
 gem 'fog'
 gem 'dropzonejs-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

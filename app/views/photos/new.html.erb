@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Photo</h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form', album: @photo %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Back', photos_path %>
+  </div>
+</div>
