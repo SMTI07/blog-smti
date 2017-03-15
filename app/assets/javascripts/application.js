@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require disqus_rails
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require react

@@ -85,6 +85,8 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    disqus_rails (0.0.6)
+      rails
     dropzonejs-rails (0.7.3)
       rails (> 3.1)
     erubis (2.7.0)
@@ -374,6 +376,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   devise
+  disqus_rails
   dropzonejs-rails
   fog
   friendly_id
@@ -397,4 +400,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
