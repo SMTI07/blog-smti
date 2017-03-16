@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:tag]
+      @articles  = Article.tagged_with(params[:tag])
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1
@@ -70,6 +74,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :slug, :banner_image_url)
+      params.require(:article).permit(:title, :content, :slug, :banner_image_url, :all_tags)
     end
 end
