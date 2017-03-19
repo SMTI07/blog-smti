@@ -1,27 +1,58 @@
 
 <%= simple_form_for(@article) do |f| %>
   <%= f.error_notification %>
+<div class="row">
+<div class="form-inputs">
+  <div class="col-sm-8">
 
-  <div class="form-inputs">
+     <li class="list-group-item">
+        
 
-    <%= f.input :title %>
-
-    <%= f.cktext_area :content, rows: 10 %>
-
- 	<li class="list-group-item">
         <div class="field">
+          <%= f.input :title, class:'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :content %>
+          <%= f.cktext_area :content, rows: 10, class:'form-control' %>
+        </div>
+
+        <div class="list-inline text-right">
+
+        <button type="submit" class='btn btn-primary'>Simpan</button>
+
+        <span onclick="window.location.href='/articles'" class='btn btn-danger'>Batal</span>
+        <%=if !(defined?(menu)).nil?
+              if menu ='edit'
+                 link_to 'Tampilkan', article, class:'btn btn-success btn-a-white'
+              end
+          end %> 
+    </li>
+  </div>
+  </div>
+
+
+  <div class="col-sm-4">
+    <li class="list-group-item">
+    <div class="field">
+        <%= f.label :all_tags %>
+        <%= f.text_field :all_tags, placeholder: "Tags separated with comma", class:'form-control' %>
+    </div>
+    <div class="field">
           <%= f.label :banner_image_url %>
             <%= f.file_field :banner_image_url, class:'form-control'%>
-        </div>
-      </li>
-
-    <div class="large-10 large-centered columns">
-      <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
     </div>
+   </li>
+    
+  </div> 
 
-  </div>
+</div>
+  
 
-  <div class="form-actions">
-    	<%= f.button :submit %>
-  </div>
+
+  
+    
+
+
+  
 <% end %>

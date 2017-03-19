@@ -2,14 +2,23 @@
 
 <p id="notice"><%= notice %></p>
 <%provide(:page_title, "Artikel") %>
-<h1>Articles</h1>
+<div class="row">
+  <div class="col-sm-8">
+    <h1>Daftar Artikel</h1>
+  </div>
+  <div class="col-sm-4 text-right">
+    <%= link_to 'Buat Artikel Baru ', new_article_path, class:"btn btn-info btn-a-white " %>
+  </div>
+</div>
+
 
 <div class="tags-cloud glassy-bg">
-  <h4>Tags Cloud</h4>
-  <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
+ <!--  <h4>Tags Cloud</h4>
+ <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+   <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+ <% end %>
+ </div> -->
+ 
 
 <table class="table table-striped">
   <thead>
@@ -28,9 +37,9 @@
 
         <td><%=  truncate(strip_tags(article.content) , length:30)%></td>
         <td><%=raw tag_links(article.all_tags)%></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'visibility' ,article, class:'btn btn-success material-icons btn-a-white' %></td>
+        <td><%= link_to 'edit', edit_article_path(article),  class:'btn btn-primary material-icons btn-a-white' %></td>
+        <td><%= link_to 'delete', article, method: :delete, data: { confirm: 'Are you sure?' },  class:'btn btn-danger material-icons btn-a-white' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
+
