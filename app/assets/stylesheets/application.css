@@ -15,4 +15,7 @@
  *= require bootstrap-datepicker3
  *= require dropzone/dropzone
  *= require main
+ *= require main-static
+ *= require custom-static
+ *= require calendar
  */

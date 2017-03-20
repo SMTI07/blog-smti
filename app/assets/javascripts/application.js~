@@ -22,6 +22,4 @@
 //= require bootstrap-datepicker
 //= require dropzone
 //= require components
-//= require scripts-static
-//= require calendar
 //= require_tree .
