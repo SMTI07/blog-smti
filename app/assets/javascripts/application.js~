@@ -20,9 +20,6 @@
 //= require cocoon
 //= require jasny-bootstrap.min
 //= require bootstrap-datepicker
-//= require toastr
 //= require dropzone
 //= require components
-//= require scripts-static
-//= require calendar
 //= require_tree .

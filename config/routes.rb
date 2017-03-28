@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy, :new]#, :update, :new, :edit]
   end
   resources :articles
-  root "static_pages#home", static_pages: "home"
+  root 'static_pages#home'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

@@ -1,0 +1,51 @@
+class StaticPagesController < ApplicationController
+  before_action :set_seed, only: [:about]
+
+  def search
+    @contents =Content.with_translations.where("title ILIKE ?", "%#{params[:search]}%")
+    @glossaries= Glossary.with_translations.where("name ILIKE ?", "%#{params[:search]}%")
+    @members=Member.where("name ILIKE ?", "%#{params[:search]}%")
+    @products =Product.where("name ILIKE ?", "%#{params[:search]}%")
+    @news =News.with_translations.where("title ILIKE ?", "%#{params[:search]}%")
+  end
+
+  def home
+    @navs = Nav.all.limit(4)
+    @news = News.where(published: true)
+  end
+
+  def about
+    @profile = Content.where(sticky: "profile").first
+    @visi = Content.where(sticky: "visi").first
+    @misi = Content.where(sticky: "misi").first
+    @prinsip = Content.where(sticky: "prinsip").first
+    @nilai = Content.where(sticky: "nilai").first
+    @agents = Agent.all
+  end
+
+  def members
+  end
+
+  def investor
+  end
+
+  def nav
+  end
+
+  def newfundoffer
+  end
+
+  def news
+  end
+
+  def contact
+  end
+
+  def login
+  end
+
+  private
+    def set_seed
+      cookies[:random_seed] ||= SecureRandom.random_number
+    end
+end
