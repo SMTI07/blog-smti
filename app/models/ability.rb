@@ -11,6 +11,8 @@ class Ability
         can :dashboard                  # allow access to dashboard
       else
         can :read, :all
+        can :access, :rails_admin
+        can :dashboard
       end
     #
     # The first argument to `can` is the action you are giving the user
