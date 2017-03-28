@@ -48,6 +48,11 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'friendly_id'
+
+gem 'toastr-rails'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '~> 1.1.1'
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   resources :albums do
     resources :photos, only: [:create, :destroy, :new]#, :update, :new, :edit]
   end
