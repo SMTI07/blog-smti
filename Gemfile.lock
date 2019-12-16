@@ -98,7 +98,7 @@ GEM
     dropzonejs-rails (0.7.3)
       rails (> 3.1)
     erubis (2.7.0)
-    excon (0.55.0)
+    excon (0.71.0)
     execjs (2.7.0)
     ffi (1.9.18)
     fission (0.5.0)
