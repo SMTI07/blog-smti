@@ -51,7 +51,7 @@ gem 'friendly_id'
 
 gem 'toastr-rails'
 gem 'remotipart', github: 'mshibuya/remotipart'
-gem 'rails_admin', '~> 1.3.0'
+gem 'rails_admin', '~> 1.4.3'
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
